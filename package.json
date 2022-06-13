@@ -16,7 +16,8 @@
   "bugs": {
     "url": "https://github.com/sbasandrai/readme-generator/issues"
   },
-  "homepage": "https://github.com/sbasandrai/readme-generator#readme"
+  "homepage": "https://github.com/sbasandrai/readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }
-
-test
