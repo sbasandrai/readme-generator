@@ -2,6 +2,10 @@
 
 ## DESCRIPTION
 
+## LICENSING
+
+- Apache
+
 ## INSTALLATION
 
 - Download through Github
