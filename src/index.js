@@ -5,25 +5,25 @@ const generateMarkdown = require("./generateMarkdown");
 
 // Array of questions to ask the user
 const questions = [
-  // Project name
+  // Name of project
   {
     type: "input",
     name: "title",
-    message: "What is the title of the project? (Required)",
+    message: "What is the project title? (Required field)",
     validate: (titleInput) => {
       if (titleInput) {
         return true;
       } else {
-        console.log("You need to enter a title to continue!");
+        console.log("You must enter a title to continue");
         return false;
       }
     },
   },
-  // Description of project
+  // Project description
   {
     type: "input",
     name: "description",
-    message: "Provide a description of the project (Required)",
+    message: "Provide a description of the project (Required field)",
     validate: (descriptionInput) => {
       if (descriptionInput) {
         return true;
@@ -33,7 +33,7 @@ const questions = [
       }
     },
   },
-  // Installation Instructions
+  // How to install
   {
     type: "input",
     name: "installation",
@@ -47,6 +47,30 @@ const questions = [
       }
     },
   },
+
+  // License Options
+  {
+    type: "checkbox",
+    name: "licensing",
+    message: "Choose a license for your project (Required)",
+    choices: [
+      "Apache",
+      "MIT",
+      "Mozilla-Public",
+      "GNU-General-Public",
+      "Common-Development-and Distribution",
+      "None",
+    ],
+    validate: (licensingInput) => {
+      if (licensingInput) {
+        return true;
+      } else {
+        console.log("You must pick a license for the project!");
+        return false;
+      }
+    },
+  },
+
   // Usage Information
   {
     type: "input",
@@ -61,7 +85,7 @@ const questions = [
       }
     },
   },
-  // Contribution Guidlines
+  // Contribution Guidelines
   {
     type: "input",
     name: "contribution",
@@ -91,28 +115,7 @@ const questions = [
       }
     },
   },
-  // License Options
-  {
-    type: "checkbox",
-    name: "licensing",
-    message: "Choose a license for your project (Required)",
-    choices: [
-      "Apache",
-      "MIT",
-      "Mozilla-Public",
-      "GNU-General-Public",
-      "Common-Development-and Distribution",
-      "None",
-    ],
-    validate: (licensingInput) => {
-      if (licensingInput) {
-        return true;
-      } else {
-        console.log("You must pick a license for the project!");
-        return false;
-      }
-    },
-  },
+
   // Github Username
   {
     type: "input",
@@ -135,7 +138,7 @@ const questions = [
   },
 ];
 
-// Function to write README file
+// Function to write to the README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
     if (err) throw err;
