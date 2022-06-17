@@ -39,3 +39,7 @@ THEN I am taken to the corresponding section of the README
 - Type 'node src/index.js'
 - Answer all question prompts
 - A README.md will be created
+
+## VIDEO
+
+https://drive.google.com/file/d/1PDrD8pnhYafB2JQjaUiRL9ur3DKX_GV3/view
